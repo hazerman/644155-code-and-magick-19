@@ -53,28 +53,15 @@
     return Math.round(Math.random()) ? name + ' ' + surname : surname + ' ' + name;
   };
 
-  var wizards = [
-    {
+  var wizards = [];
+  for (var wizardCounter = 0; wizardCounter < 4; wizardCounter++) {
+    var wizardTemplate = {
       name: getWizardName(),
       coatColor: getRandomValue(WIZARD_COAT_COLORS),
       eyesColor: getRandomValue(WIZARD_EYES_COLORS)
-    },
-    {
-      name: getWizardName(),
-      coatColor: getRandomValue(WIZARD_COAT_COLORS),
-      eyesColor: getRandomValue(WIZARD_EYES_COLORS)
-    },
-    {
-      name: getWizardName(),
-      coatColor: getRandomValue(WIZARD_COAT_COLORS),
-      eyesColor: getRandomValue(WIZARD_EYES_COLORS)
-    },
-    {
-      name: getWizardName(),
-      coatColor: getRandomValue(WIZARD_COAT_COLORS),
-      eyesColor: getRandomValue(WIZARD_EYES_COLORS)
-    }
-  ];
+    };
+    wizards.push(wizardTemplate);
+  }
 
   var renderWizard = function (wizard) {
     var wizardElement = wizardsItemTemplate.cloneNode(true);
@@ -89,5 +76,6 @@
     fragment.appendChild(renderWizard(wizards[i]));
   }
   wizardsListElement.appendChild(fragment);
-  userDialog.querySelector('.setup-similar').classList.remove('hidden');
+  var similarContainer = userDialog.querySelector('.setup-similar');
+  similarContainer.classList.remove('hidden');
 })();
