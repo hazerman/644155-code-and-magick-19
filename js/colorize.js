@@ -12,11 +12,10 @@
       item.style.backgroundColor = color;
     }
     input.value = color;
+    return color;
   };
 
-  window.colorize = function (item, input, array, isSvg) {
-    item.addEventListener('click', function () {
-      changeColor(item, input, array, isSvg);
-    });
+  window.colorize = {
+    changeColor: changeColor
   };
 })();

@@ -25,7 +25,7 @@
 
   var openPopup = function () {
     if (!wasPopupOpenedEarlier) {
-      window.backend.load(window.setup.wizardsLoadSuccessHandler, errorHandler);
+      window.backend.load(window.similar.wizardsLoadSuccessHandler, errorHandler);
       wasPopupOpenedEarlier = true;
     }
     userDialog.classList.remove('hidden');
